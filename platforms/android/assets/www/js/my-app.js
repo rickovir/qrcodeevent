@@ -1,5 +1,7 @@
 // Initialize your app
-var myApp = new Framework7();
+var myApp = new Framework7({
+  material : true
+});
 
 // Export selectors engine
 var $$ = Dom7;
@@ -7,14 +9,35 @@ var $$ = Dom7;
 // Add view
 var mainView = myApp.addView('.view-main', {
     // Because we use fixed-through navbar we can enable dynamic navbar
-    dynamicNavbar: true
+    //dynamicNavbar: true
 });
 
+$$('#btn-signin-home').on('click', function(page){
+  myApp.closeModal();
+})
+$$('#btn-reg-home').on('click', function(page){
+  myApp.closeModal();
+  mainView.router.loadPage('register.html');
+})
+
 // Callbacks to run specific code for specific pages, for example for About page:
-myApp.onPageInit('about', function (page) {
+myApp.onPageInit('services', function (page) {
     // run createContentPage func after link was clicked
+      mainView.router.loadPage('login.html');
     $$('.create-page').on('click', function () {
-        createContentPage();
+        myApp.alert("dummy");
+        mainView.router.loadPage('register.html');
+    });
+    $$('.x').on('click', function () {
+        myApp.alert("dummy");
+      mainView.router.loadPage('login.html');
+    });
+});
+// Callbacks to run specific code for specific pages, for example for About page:
+myApp.onPageInit('register', function (page) {
+    // run createContentPage func after link was clicked
+    $$('#btn-signin-reg').on('click', function () {
+        mainView.router.loadPage('index.html');
     });
 });
 

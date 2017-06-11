@@ -4,17 +4,20 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
     <meta name="apple-mobile-web-app-capable" content="yes">
-    <!-- Color theme for statusbar -->
+    <!-- <meta name="apple-mobile-web-app-status-bar-style" content="black"> -->
     <meta name="theme-color" content="#2196f3">
-    
     <title>My App</title>
     <!-- Path to Framework7 Library CSS-->
-    <link rel="stylesheet" href="css/framework7.material.min.css">
     <link rel="stylesheet" href="css/framework7.material.colors.min.css">
+    <link rel="stylesheet" href="css/framework7.material.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+    <link rel="stylesheet" href="css/material-icons.css">
     <!-- Path to your custom app styles-->
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <link rel="stylesheet" href="css/my-app.css">
   </head>
-  <body>
+  <body  class="theme-red">
     <!-- Status bar overlay for fullscreen mode-->
     <div class="statusbar-overlay"></div>
     <!-- Panels overlay-->
@@ -35,25 +38,30 @@
     <div class="views">
       <!-- Your main view, should have "view-main" class-->
       <div class="view view-main">
-        <!-- Top Navbar-->
-        <div class="navbar">
-          <div class="navbar-inner">
-            <!-- We have home navbar without left link-->
-            <div class="center sliding">Awesome App</div>
-            <div class="right">
-              <!-- Right link contains only icon - additional "icon-only" class--><a href="#" class="link icon-only open-panel"> <i class="icon icon-bars"></i></a>
-            </div>
-          </div>
-        </div>
+       
         <!-- Pages, because we need fixed-through navbar and toolbar, it has additional appropriate classes-->
         <div class="pages navbar-through toolbar-through">
           <!-- Page, data-page contains page name-->
           <div data-page="index" class="page">
+               <!-- Top Navbar-->
+            <div class="navbar">
+              <div class="navbar-inner">
+                <!-- We have home navbar without left link-->
+                <div class="left">
+                  <a href="#" class="link icon-only open-panel"> <i class="icon icon-bars"></i></a>
+                </div>
+                <div class="center">Awesome App</div>
+                <div class="right">
+                </div>
+              </div>
+            </div>
             <!-- Scrollable page content-->
             <div class="page-content">
               <div class="content-block-title">Welcome To My Awesome App</div>
               <div class="content-block">
                 <div class="content-block-inner">
+                <a href="#" class="button button-fill color-cyan x">Test button</a>
+                <a href="#" class="create-page button button-fill color-cyan">here </a>to create dynamic page.</p>
                   <p>Couple of worlds here because my app is so awesome!</p>
                   <p>Duis sed erat ac eros ultrices pharetra id ut tellus. Praesent rhoncus enim ornare ipsum aliquet ultricies. Pellentesque sodales erat quis elementum sagittis.</p>
                 </div>
@@ -80,6 +88,7 @@
                         </div>
                       </div></a></li>
                 </ul>
+                <a href="#" class="button button-fill color-cyan">test</a>
               </div>
               <div class="content-block-title">Side panels</div>
               <div class="content-block">
@@ -92,15 +101,59 @@
           </div>
         </div>
         <!-- Bottom Toolbar-->
-        <div class="toolbar">
+        <!-- <div class="toolbar">
           <div class="toolbar-inner"><a href="#" class="link">Link 1</a><a href="#" class="link">Link 2</a></div>
+        </div>
+      </div> -->
+    </div>
+
+
+    <div class="login-screen modal-in">
+      <div class="view">
+        <div class="page">
+          <div data-page="login" class="page">
+            <div class="page-content login-screen-content">
+              <div class="login-screen-title">
+                <img src="http://sasurie.com/srishta17/Eng/civil/img/code.png" width="100px">
+                <h3>QR Event</h3>
+              </div>
+              <form>
+                <div class="list-block inputs-list">
+                  <ul>
+                    <li class="item-content">
+                      <div class="item-media"><i class="material-icons color-red">email</i></div>
+                      <div class="item-inner">
+                        <div class="item-title floating-label">Email</div>
+                        <div class="item-input">
+                          <input type="email" name="email">
+                        </div>
+                      </div>
+                    </li>
+                    <li class="item-content">
+                      <div class="item-media"><i class="material-icons color-red">lock</i></div>
+                      <div class="item-inner">
+                        <div class="item-title floating-label">Password</div>
+                        <div class="item-input">
+                          <input type="password" name="password">
+                        </div>
+                        </div>
+                    </li>
+                  </ul>
+                </div>
+                <div class="content-block"><a href="#" id="btn-signin-home" class="button button-big button-fill color-red">Sign In</a></div>
+                <div class="content-block"><a href="#" id="btn-reg-home" class="button button-big color-green">Register</a></div>
+              </form>
+            </div>
+          </div>
         </div>
       </div>
     </div>
+
     <!-- Path to Framework7 Library JS-->
     <script type="text/javascript" src="js/framework7.min.js"></script>
+
     <!-- Path to cordova Library JS-->
-	<script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="cordova.js"></script>
     <!-- Path to your app js-->
     <script type="text/javascript" src="js/my-app.js"></script>
   </body>
